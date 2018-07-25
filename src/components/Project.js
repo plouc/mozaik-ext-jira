@@ -27,18 +27,18 @@ export default class Project extends Component {
     }
 
     render() {
-        const { apiData, apiError } = this.props
+        const { projectId, apiData, apiError } = this.props
 
-        let title = ''
+        let subject = projectId
         let body = <WidgetLoader />
         if (apiData && !apiError) {
-            title = apiData.name
+            subject = apiData.name
             body = <Description>{apiData.description}</Description>
         }
 
         return (
             <Widget>
-                <WidgetHeader title={title} icon={HeaderIcon} />
+                <WidgetHeader subject={subject} icon={HeaderIcon} />
                 <WidgetBody>
                     <TrapApiError error={apiError}>{body}</TrapApiError>
                 </WidgetBody>

@@ -62,8 +62,8 @@
     "styled-components": "^2.1.1"
   },
   "scripts": {
-    "lint": "eslint ./src/**",
-    "lint:fix": "eslint --fix ./src/**",
+    "lint": "eslint ./src/** ./test/**",
+    "lint:fix": "eslint --fix ./src/** ./test/**",
     "test": "jest --verbose",
     "test:cover": "jest --verbose --coverage",
     "coverage": "cat ./coverage/lcov.info | coveralls",
