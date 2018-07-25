@@ -85,6 +85,6 @@ key           | required | description
 [npm-image]: https://img.shields.io/npm/v/@mozaik/ext-jira.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/@mozaik/ext-jira
 [travis-image]: https://img.shields.io/travis/plouc/mozaik-ext-jira.svg?style=flat-square
-[travis-url]: https://travis-ci.org/plouc/mozaik-ext-jira
+[travis-url]: https://travis-ci.com/plouc/mozaik-ext-jira
 [license-image]: https://img.shields.io/github/license/plouc/mozaik-ext-jira.svg?style=flat-square
 [license-url]: https://github.com/plouc/mozaik-ext-jira/blob/master/LICENSE.md
