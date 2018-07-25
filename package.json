@@ -10,13 +10,12 @@
     "name": "Raphaël Benitte",
     "url": "https://github.com/plouc"
   },
-  "homepage": "https://github.com/plouc/mozaik-ext-json",
+  "homepage": "https://github.com/plouc/mozaik-ext-jira",
   "main": "./lib/components/index.js",
   "module": "es/components/index.js",
   "jsnext:main": "es/components/index.js",
   "keywords": [
-    "json",
-    "api",
+    "jira",
     "mozaik",
     "widget",
     "extension",
