@@ -1,12 +1,6 @@
-import React, { Component } from 'react'
+import React, { Fragment, Component } from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import HeaderIcon from 'react-icons/lib/md/info'
-import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader } from '@mozaik/ui'
-
-const Description = styled.div`
-    padding: 1vmin 2vmin 2vmin;
-`
+import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader, InfoIcon } from '@mozaik/ui'
 
 export default class Project extends Component {
     static propTypes = {
@@ -33,12 +27,12 @@ export default class Project extends Component {
         let body = <WidgetLoader />
         if (apiData && !apiError) {
             subject = apiData.name
-            body = <Description>{apiData.description}</Description>
+            body = <Fragment>{apiData.description}</Fragment>
         }
 
         return (
             <Widget>
-                <WidgetHeader subject={subject} icon={HeaderIcon} />
+                <WidgetHeader subject={subject} icon={InfoIcon} />
                 <WidgetBody>
                     <TrapApiError error={apiError}>{body}</TrapApiError>
                 </WidgetBody>

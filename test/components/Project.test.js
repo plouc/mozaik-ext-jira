@@ -1,7 +1,10 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import Enzyme from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
 import { WidgetHeader, WidgetLoader } from '@mozaik/ui'
 import Project from './../../src/components/Project'
+
+Enzyme.configure({ adapter: new Adapter() })
 
 describe('getApiRequest', () => {
     it('should return correct api request', () => {
@@ -35,13 +38,13 @@ describe('getApiRequest', () => {
 })
 
 it('should display loader if no apiData available', () => {
-    const wrapper = shallow(<Project projectId="MOZAIK" />)
+    const wrapper = Enzyme.shallow(<Project projectId="MOZAIK" />)
 
     expect(wrapper.find(WidgetLoader).exists()).toBeTruthy()
 })
 
 it('should display project id when no api data is available', () => {
-    const wrapper = shallow(<Project projectId="MOZAIK" />)
+    const wrapper = Enzyme.shallow(<Project projectId="MOZAIK" />)
 
     const header = wrapper.find(WidgetHeader)
     expect(header.exists()).toBeTruthy()

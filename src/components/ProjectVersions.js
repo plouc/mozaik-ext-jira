@@ -1,7 +1,13 @@
 import React, { Fragment, Component } from 'react'
 import PropTypes from 'prop-types'
-import HeaderIcon from 'react-icons/lib/md/event'
-import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader } from '@mozaik/ui'
+import {
+    TrapApiError,
+    Widget,
+    WidgetHeader,
+    WidgetBody,
+    WidgetLoader,
+    CalendarIcon,
+} from '@mozaik/ui'
 import ProjectVersionsItem from './ProjectVersionsItem'
 
 export default class ProjectVersions extends Component {
@@ -42,8 +48,13 @@ export default class ProjectVersions extends Component {
 
         return (
             <Widget>
-                <WidgetHeader title="versions" subject={subject} count={count} icon={HeaderIcon} />
-                <WidgetBody>
+                <WidgetHeader
+                    title="versions"
+                    subject={subject}
+                    count={count}
+                    icon={CalendarIcon}
+                />
+                <WidgetBody disablePadding={true}>
                     <TrapApiError error={apiError}>{body}</TrapApiError>
                 </WidgetBody>
             </Widget>

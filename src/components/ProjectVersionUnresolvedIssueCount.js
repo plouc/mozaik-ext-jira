@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import LoadingIcon from 'react-icons/lib/md/loop'
-import HasUnresolvedIcon from 'react-icons/lib/md/priority-high'
-import AllResolvedIcon from 'react-icons/lib/md/done-all'
-import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader } from '@mozaik/ui'
+import {
+    TrapApiError,
+    Widget,
+    WidgetHeader,
+    WidgetBody,
+    WidgetLoader,
+    LoaderIcon,
+    CheckCircleIcon,
+    AlertTriangleIcon,
+} from '@mozaik/ui'
 
 const Wrapper = styled.div`
     display: flex;
@@ -50,7 +56,7 @@ export default class ProjectVersionUnresolvedIssueCount extends Component {
         const { versionName, apiData, apiError, theme } = this.props
 
         let title = ''
-        let icon = LoadingIcon
+        let icon = LoaderIcon
         let body = <WidgetLoader />
         if (apiData && !apiError) {
             title = apiData.project.name
@@ -58,26 +64,32 @@ export default class ProjectVersionUnresolvedIssueCount extends Component {
             let color
             let label
             if (apiData.unresolvedIssueCount === 0) {
-                icon = AllResolvedIcon
+                icon = CheckCircleIcon
                 color = theme.colors.success
                 label = (
                     <span>
-                        no unresolved issue,<br />well done!
+                        no unresolved issue,
+                        <br />
+                        well done!
                     </span>
                 )
             } else {
-                icon = HasUnresolvedIcon
+                icon = AlertTriangleIcon
                 color = theme.colors.warning
                 if (apiData.unresolvedIssueCount === 1) {
                     label = (
                         <span>
-                            unresolved issue,<br />almost done ;)
+                            unresolved issue,
+                            <br />
+                            almost done ;)
                         </span>
                     )
                 } else {
                     label = (
                         <span>
-                            unresolved issues,<br />back to work then!
+                            unresolved issues,
+                            <br />
+                            back to work then!
                         </span>
                     )
                 }
